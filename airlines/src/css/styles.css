@@ -2,6 +2,11 @@
     text-align: center;
 }
 
+.result{
+    margin: auto;
+    align-content: center;
+}
+
 h1 {
     font-size: 150px;
 }
