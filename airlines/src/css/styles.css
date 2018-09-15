@@ -14,5 +14,17 @@ h1 {
 .disclaimer{
     margin: 10px;
     text-align: center;
-    color: firebrick;
+    color: crimson;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+  
 }
