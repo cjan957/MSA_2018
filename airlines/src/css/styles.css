@@ -9,13 +9,28 @@
 
 h1 {
     font-size: 150px;
+    color: azure;
+}
+
+h2 {
+    font-size: 110px;
+    color: azure;
 }
 
 .disclaimer{
     margin: 10px;
     text-align: center;
     color: crimson;
+    background-color: azure;
+    border-radius: 5px;
 }
+
+p {
+    font-size: 20px;
+    margin: 10px;
+    color: azure;
+}
+
 
 img {
     display: block;
@@ -27,4 +42,23 @@ img {
     max-width: 300px; 
     max-height: 300px;
   
+}
+
+.container-fluid{
+    background-color: tomato;
+}
+
+html{
+    background-color: tomato;
+}
+
+table#tableForm{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: burlywood;
+}
+
+td{
+    padding: 10px;
 }

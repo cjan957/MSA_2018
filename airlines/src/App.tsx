@@ -2,6 +2,7 @@ import TextFields from '@material-ui/core/TextField';
 import * as React from "react";
 // import Loader from 'react-loader-spinner'
 import ResultComponent from './components/ResultComponent';
+import ByAirlineComponent from './components/ByAirlineComponent';
 import './App.css';
 
 interface ISearchState{
@@ -30,17 +31,17 @@ export default class App extends React.Component<{}, ISearchState> {
       error: "0",
       searchTerm: "",
       found: "0",
-      imageLink: "http://www.samuitimes.com/wp-content/uploads/2014/04/Thai-airways-logo.jpg",
-      airlineName: "Thai airways inter",
-      airlineCode: "THA",
-      country: "Thailand",
-      isInternational: "YES",
-      routes: "34234",
-      totalAircraft: "34123",
-      avgFleetAge: "33932",
-      noOldFleet: "1321",
-      accidents: "3",
-      fatalAccidents: "3"
+      imageLink: "",
+      airlineName: "",
+      airlineCode: "",
+      country: "",
+      isInternational: "",
+      routes: "",
+      totalAircraft: "",
+      avgFleetAge: "",
+      noOldFleet: "",
+      accidents: "",
+      fatalAccidents: ""
     }
     this.onSearch = this.onSearch.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -56,12 +57,17 @@ export default class App extends React.Component<{}, ISearchState> {
       <div className="container-fluid">
         <div className="centreText">
           {/* React components must have a wrapper node/element */}
-          <p>Is this airline safe?</p>
+          <h2>Is this airline safe?</h2>
+          <p>You can check any airline's risk profile by entering their ICAO operator code below</p>
           <form onSubmit={this.onSearch}>
-              <TextFields autoComplete = "off" type="text" onChange = {this.handleChange} name="airline" placeholder="airline name"/>
-              <input type="submit" value="Search" />
+            <table id="tableForm">
+              <tr>
+                  <td><TextFields autoComplete = "off" type="text" onChange = {this.handleChange} name="airline" placeholder="ICAO Operator code"/></td>
+                  <td><input type="submit" value="Search" /></td>
+              </tr>
+            </table> 
           </form>
-          {this.state.error === "1" ? <p> Invalid code, please check your airline code and try again </p> : <p>ICAO Operator code is a 3-letter code</p>}
+          {this.state.error === "1" ? <p> Invalid code, please check your airline code and try again. Refer to ICAO code for help </p> : <p>ICAO Operator code is a 3-letter code designated for airlines</p>}
         </div>
         <div className="mainResult">
          {this.state.found === "1" ? <ResultComponent 
@@ -77,18 +83,7 @@ export default class App extends React.Component<{}, ISearchState> {
             accidents={this.state.accidents}
             fatalAccidents={this.state.fatalAccidents} /> 
             : 
-            <ResultComponent airlineName={this.state.airlineName}
-            airlineCode={this.state.airlineCode}
-            imageLink={this.state.imageLink}
-            country={this.state.country}
-            isInternational={this.state.isInternational}
-            routes = {this.state.routes}
-            totalAircraft={this.state.totalAircraft}
-            avgFleetAge={this.state.avgFleetAge}
-            noOldFleet={this.state.noOldFleet}
-            accidents={this.state.accidents}
-            fatalAccidents={this.state.fatalAccidents} 
-            />
+            <ByAirlineComponent/>
             
             }
         </div>
@@ -113,6 +108,7 @@ export default class App extends React.Component<{}, ISearchState> {
           if(data.length !== 0){
             this.setState({
               error: "0",
+              found: "1",
               airlineName: data[0].operatorName,
               airlineCode: data[0].operatorCode,
               avgFleetAge: data[0].av_fleet_age, 
@@ -127,7 +123,8 @@ export default class App extends React.Component<{}, ISearchState> {
           }
           else{
               this.setState({
-                error: "1"
+                error: "1",
+                found: "0"
               })
           }
         })

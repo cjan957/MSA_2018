@@ -118,7 +118,7 @@ export default class ResultComponent extends React.Component<any> {
                         </List>
                     </CardContent>
                 </Card>
-                <p className="disclaimer">Disclaimer: The information provided here is as accurate as what's available from the International Civil Aviation Organization (ICAO)'s data service </p>
+                <p className="disclaimer">Disclaimer: The information provided here is as accurate as what's available from the <a href ="https://www.icao.int/safety/iStars/Pages/API-Data-Service.aspx">International Civil Aviation Organization (ICAO)'s data service </a></p>
             </div>
         );
     }
