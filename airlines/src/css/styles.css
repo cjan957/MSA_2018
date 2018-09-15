@@ -10,3 +10,9 @@
 h1 {
     font-size: 150px;
 }
+
+.disclaimer{
+    margin: 10px;
+    text-align: center;
+    color: firebrick;
+}

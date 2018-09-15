@@ -3,6 +3,7 @@ import { Nav, Navbar, NavItem } from 'react-bootstrap';
 import { IndexLinkContainer } from "react-router-bootstrap";
 import { Link } from 'react-router-dom';
 
+
 export const Header: React.StatelessComponent<{}> = () => {
     return (
         <Navbar>
