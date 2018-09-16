@@ -59,7 +59,8 @@ export default class App extends React.Component<{}, ISearchState> {
     return (
       <div className="container-fluid">
         <div className="centreText">
-          <h2>Is this airline safe?</h2>
+          <h2>Is this airline safe? 🤔</h2>
+          <p>Have not heard of an airline before? ✈️ Going on an overseas trip?</p>
           <p>You can check any airline's risk profile by entering their ICAO operator code below</p>
           
           <div className="searchBoxArea">
@@ -73,7 +74,7 @@ export default class App extends React.Component<{}, ISearchState> {
               </table> 
             </form>
           </div>
-          {this.state.error === "1" ? <p> Invalid code, please check your airline code and try again. Some codes on Wikipedia are outdated, please choose a code of a well known airline </p> : <p>ICAO Operator code is a 3-letter code designated for an airline</p>}
+          {this.state.error === "1" ? <p> Invalid code, please check your airline code and try again. Some codes on Wikipedia are outdated, please choose a code of a well known airline </p> : <p>ICAO Operator code is a 3-letter code allocated to an airline</p>}
         </div>
         <div className="mainResult">
             {this.state.found === "1" ? <ResultComponent 
