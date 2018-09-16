@@ -2,6 +2,14 @@
     text-align: center;
 }
 
+.searchBoxArea{
+    background-color: antiquewhite;
+    padding: 20px;
+    margin: 100px;
+    border: 2px solid sandybrown;
+    max-height: 150px;
+}
+
 .result{
     margin: auto;
     align-content: center;
@@ -53,12 +61,14 @@ html{
 }
 
 table#tableForm{
+    vertical-align: middle;
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: burlywood;
+    max-width: 500px;
+    margin: auto;
+    padding: auto;
+
 }
 
 td{
-    padding: 10px;
+    margin: 10px;
 }
